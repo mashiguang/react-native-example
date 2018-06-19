@@ -1,7 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default class App extends React.Component {
+
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -9,6 +14,9 @@ export default class App extends React.Component {
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
         <Text>Hi, What's up!</Text>
+        <Button 
+          onPress={this._onPressButton} 
+          title="Press me"/>
       </View>
     );
   }
